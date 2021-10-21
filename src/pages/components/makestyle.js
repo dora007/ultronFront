@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/styles';
-import { color } from 'highcharts';
 
 export const useStyles = makeStyles({
   root: {
@@ -21,5 +20,4 @@ export const useStyles = makeStyles({
     float: 'right',
     color: "#9E9E9E",
   }
-
 });

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Tabs, Typography, Tab, Box, TableCell, Paper } from '@material-ui/core';
-import { useStyles } from '../ultronBar/makestyle';
+import { useStyles } from '../components/makestyle';
 import { connect } from 'dva';
 
 function TabPanel(props) {

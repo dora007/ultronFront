@@ -1,5 +1,5 @@
 import styles from './index.css';
-import { useStyles } from '../ultronHeaderPage/makestyle';
+import { useStyles } from '../components/makestyle';
 import { ToggleButton, ToggleButtonGroup, Toolbar, Box, AppBar, MenuIcon, IconButton, MoreIcon, StyledFab, Typography, Button } from '@material-ui/core';
 import { AccessAlarm, Stop } from '@material-ui/icons';
 import { connect } from 'dva';
