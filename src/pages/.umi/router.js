@@ -18,7 +18,7 @@ const routes = [
     routes: [
       {
         path: '/',
-        component: require('../lucustHome').default,
+        component: require('../ultronHome').default,
         exact: true,
         _title: 'ultron',
         _title_default: 'ultron',

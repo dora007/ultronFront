@@ -1,5 +1,5 @@
 const Model = {
-  namespace: 'home',
+  namespace: 'ultronBarModel',
   state: {},
   effetcs: {},
   reducers: {},

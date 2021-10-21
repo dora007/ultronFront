@@ -20,7 +20,7 @@ export function _onCreate() {
     app.use(plugin);
   });
   app.use(require('/Users/dmj/Desktop/dmj_code/ultronFront/node_modules/dva-immer/dist/index.js')());
-  app.model({ namespace: 'model', ...(require('/Users/dmj/Desktop/dmj_code/ultronFront/src/pages/lucustHome/model.js').default) });
+  app.model({ namespace: 'model', ...(require('/Users/dmj/Desktop/dmj_code/ultronFront/src/pages/ultronHome/model.js').default) });
   return app;
 }
 

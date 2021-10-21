@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Tabs, Typography, Tab, Box, TableCell, Paper } from '@material-ui/core';
-import { useStyles } from '../lucustHome/makestyle';
+import { useStyles } from '../ultronBar/makestyle';
 import { connect } from 'dva';
 
 function TabPanel(props) {
@@ -24,13 +24,13 @@ function a11yProps(index) {
 }
 
 const mapStateToProps = state => {
-  const home = state['home'];
+  const ultronBarModel = state['ultronBarModel'];
   return {
-    home,
+    ultronBarModel,
   };
 };
 
-const Home = props => {
+export const UltronBar = props => {
   const { dispatch } = props;
   const [value, setValue] = useState(0);
 
@@ -73,5 +73,3 @@ const Home = props => {
       </Box></>
   );
 };
-
-export default connect(mapStateToProps, null)(Home);
