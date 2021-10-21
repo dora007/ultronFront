@@ -1,14 +1,25 @@
 import { makeStyles } from '@material-ui/styles';
+import { color } from 'highcharts';
 
 export const useStyles = makeStyles({
-	root: {
-		// background: 'linear-gradient(45deg, #666666 30%, #3300cc 90%)',
-		// background: '#001E3C',
-		border: 0,
-		borderRadius: 3,
-		// boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-		// color: '#ffffff',
-		height: 48,
-		padding: '0 30px',
-	},
+  root: {
+    border: 0,
+    borderRadius: 3,
+    height: 48,
+    padding: '0 30px',
+  },
+  headerBg: {
+    backgroundImage: 'linear-gradient(#FFFFFF, #E8E8E8)',
+    fontSize: 2.5,
+    fontWeight: 'normal',
+    letterSpacing: '-1px',
+    padding: '0.6em 0',
+    color: "#9E9E9E",
+    margin: 0
+  },
+  floatRight: {
+    float: 'right',
+    color: "#9E9E9E",
+  }
+
 });
