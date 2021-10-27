@@ -12,16 +12,7 @@
 	margin: 0;
 }
 
-/* .headerTitle{
-  font-size: 16;
-  font-weight: 600;
-  font-family: 'fantasy';
-  color: 'red'
+a:hover{
+  border-bottom:1px solid #000;
+  cursor: pointer;
 }
-
-.headerText{
-  font-size: 16;
-  font-weight: 800;
-  font-family:'monospace';
-  color: '#3B3B3B';
-} */
