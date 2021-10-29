@@ -6,6 +6,7 @@ import styles from './index.css';
 import { UltronUsers } from '../ultronUsers/index'
 import { useState } from 'react';
 
+
 const mapStateToProps = state => {
   const ultronHeader = state['ultronHeader'];
   return {
@@ -29,6 +30,8 @@ export const HeaderStatus = ({ title, textObj, flag = 1, color = '#5E5E5E', open
 export const UltronHeader = props => {
   const { dispatch } = props;
   const [open, setOpen] = React.useState(true);
+  const [flag, setFlag] = useState(true)//是否展示Host
+  const [host, setHost] = useState('')
 
 
   const handleClose = () => {
@@ -37,24 +40,26 @@ export const UltronHeader = props => {
 
   const openEditUser = () => {
     setOpen(true)
+    setFlag(false)
   }
 
-  const handleOk = (e) => {
-
+  const handleOk = (host, users, spawn) => {
+    setHost(host)
+    setOpen(false);
   }
 
 
   return (
     <>
-      <UltronUsers open={open} handleClose={handleClose} handleOk={handleOk} />
+      <UltronUsers open={open} handleClose={handleClose} handleOk={handleOk} flag={flag} />
       <h1 className={styles.title}>
         <div>
           <AppBar position="fixed" className={useStyles().headerBg}>
             <p>
-              <img src="./spaceman.png" width="45" style={{ paddingLeft: 30 }}></img>
-              <span style={{ fontSize: 28, fontWeight: 700, paddingLeft: 7, fontFamily: 'fantasy', color: '#404040' }}>Ultron</span>
+              <img src="./spaceman.png" width="75" style={{ paddingLeft: 30 }}></img>
+              <span style={{ fontSize: 30, fontWeight: 700, paddingLeft: 7, fontFamily: 'fantasy', color: '#404040', }}>Ultron</span>
               <Toolbar className={useStyles().floatRight}>
-                <HeaderStatus title='HOST' textObj='https://www.baidu.com' />
+                <HeaderStatus title='HOST' textObj={host} />
                 <HeaderStatus title='STATUS' textObj='RUNNING(100 users)' openEditUser={openEditUser} />
                 <HeaderStatus title='RPS' textObj='22.5' />
                 <HeaderStatus title='FAILURES' textObj='10%' />

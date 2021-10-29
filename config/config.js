@@ -33,7 +33,7 @@ export default {
 
   proxy: {
     '/api/': {
-      // target: 'http://furcas-backend.beta.iwosai.com/',
+      target: 'http://127.0.0.1:8089/',
       changeOrigin: true,
       pathRewrite: {
         '^/server': '',
@@ -74,6 +74,7 @@ export default {
       component: '../layouts/index',
       routes: [
         { path: '/', component: '../pages/ultronHome/' },
+        { path: '/charts', component: '../pages/ultronBar/highcharttest' },
         {
           path: '/check',
           component: '../layouts/check',

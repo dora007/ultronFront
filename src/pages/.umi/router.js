@@ -24,6 +24,13 @@ const routes = [
         _title_default: 'ultron',
       },
       {
+        path: '/charts',
+        component: require('../ultronBar/highcharttest').default,
+        exact: true,
+        _title: 'ultron',
+        _title_default: 'ultron',
+      },
+      {
         path: '/check',
         component: require('../../layouts/check').default,
         exact: true,

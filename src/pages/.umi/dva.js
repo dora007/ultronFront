@@ -21,6 +21,7 @@ export function _onCreate() {
   });
   app.use(require('/Users/dmj/Desktop/dmj_code/ultronFront/node_modules/dva-immer/dist/index.js')());
   app.model({ namespace: 'model', ...(require('/Users/dmj/Desktop/dmj_code/ultronFront/src/pages/ultronHome/model.js').default) });
+app.model({ namespace: 'model', ...(require('/Users/dmj/Desktop/dmj_code/ultronFront/src/pages/ultronBar/model.js').default) });
   return app;
 }
 

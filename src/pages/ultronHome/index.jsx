@@ -3,7 +3,6 @@ import { Tabs, Typography, Tab, Box, TableCell, Paper } from '@material-ui/core'
 import { connect } from 'dva';
 import { UltronHeader } from '../ultronHeaderPage/index'
 import { UltronBar } from '../ultronBar/index'
-import { UltronUsers } from '../ultronUsers/index'
 
 
 const mapStateToProps = state => {
@@ -14,9 +13,16 @@ const mapStateToProps = state => {
 };
 
 const UltronHome = props => {
+  const { statisticData } = props.home;
   const { dispatch } = props;
   const [value, setValue] = useState(0);
 
+  const getChartStatic = () => {
+    alert('11')
+    dispatch({
+      type: 'home/getChartsStatistic',
+    });
+  }
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -25,7 +31,7 @@ const UltronHome = props => {
   return (
     <>
       <UltronHeader />
-      <UltronBar />
+      <UltronBar getChartStatic={getChartStatic} />
     </>
   );
 };

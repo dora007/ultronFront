@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Tabs, Typography, Tab, Box, TableCell, Paper } from '@material-ui/core';
 import { useStyles } from '../components/makestyle';
 import { connect } from 'dva';
+import { LineChart } from '../ultronBar/highcharttest'
+import { LineTimeChart } from '../ultronBar/highchartsTime'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -23,19 +25,21 @@ function a11yProps(index) {
   };
 }
 
-const mapStateToProps = state => {
-  const ultronBarModel = state['ultronBarModel'];
-  return {
-    ultronBarModel,
-  };
-};
-
-export const UltronBar = props => {
+export const UltronBar = ({ getChartStatic }, props) => {
   const { dispatch } = props;
   const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    switch (newValue) {
+      case 0: {
+        getChartStatic()
+      } break;
+      case 1: {
+
+
+      } break;
+    }
   };
 
   return (
@@ -52,17 +56,12 @@ export const UltronBar = props => {
           </Tabs>
         </Box>
         <TabPanel value={value} index={0}>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi
-          leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna,
-          vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum.
-          Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus,
 
         </TabPanel>
         <TabPanel value={value} index={1}>
-          Item Two
+          <LineChart />
         </TabPanel>
         <TabPanel value={value} index={2}>
-          Item Three
         </TabPanel>
         <TabPanel value={value} index={3}>
           Item four
@@ -70,6 +69,7 @@ export const UltronBar = props => {
         <TabPanel value={value} index={4}>
           Item five
         </TabPanel>
-      </Box></>
+      </Box>
+    </>
   );
 };

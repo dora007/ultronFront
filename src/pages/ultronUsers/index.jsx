@@ -20,7 +20,7 @@ const style = {
 
 
 
-export const UltronUsers = ({ open, handleClose, handleOk }) => {
+export const UltronUsers = ({ open, handleClose, handleOk, flag = true }) => {
   const [host, setHost] = useState('')
   const [users, setUsers] = useState('')
   const [spawn, setSpawn] = useState('')
@@ -34,7 +34,9 @@ export const UltronUsers = ({ open, handleClose, handleOk }) => {
   };
 
   const handleSubmit = () => {
+    //获取user host spawn
     console.log(host, users, spawn)
+    handleOk(host, users, spawn)
   }
 
   return (
@@ -61,14 +63,14 @@ export const UltronUsers = ({ open, handleClose, handleOk }) => {
           variant="standard"
           onChange={handleChange}
         />
-        <TextField
+        {flag ? <TextField
           margin="dense"
           id="host"
           label="Host"
           fullWidth
           variant="standard"
           onChange={handleChange}
-        />
+        /> : ''}
       </DialogContent>
       <DialogActions>
         <Button onClick={handleClose}>取消</Button>

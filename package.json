@@ -19,7 +19,8 @@
 		"highcharts-react-official": "^3.0.0",
 		"react": "^17.0.0",
 		"react-dom": "^17.0.0",
-		"react-virtualized": "^9.22.3"
+		"react-virtualized": "^9.22.3",
+    "umi-request": "^1.2.19"
 	},
 	"devDependencies": {
 		"babel-eslint": "^9.0.0",
