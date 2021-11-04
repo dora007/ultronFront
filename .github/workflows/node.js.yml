@@ -19,11 +19,12 @@ jobs:
         with:
           node-version: "12.x"
       - name: Install dependencies
-        run: cd mock & yarn install
+        run: |
+          cd mock & pwd
 
       - name: Run a one-line script
         run: pwd
-        
+
       - name: Build
         run: yarn build
 
