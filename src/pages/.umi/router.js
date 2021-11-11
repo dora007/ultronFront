@@ -40,7 +40,7 @@ const routes = [
       {
         component: () =>
           React.createElement(
-            require('/Users/dmj/Desktop/dmj_code/ultronFront/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
+            require('/Users/dmj/Documents/dmj_dev/ultronFront/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
               .default,
             { pagesPath: 'src/pages', hasRoutesInConfig: true },
           ),
@@ -54,7 +54,7 @@ const routes = [
   {
     component: () =>
       React.createElement(
-        require('/Users/dmj/Desktop/dmj_code/ultronFront/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
+        require('/Users/dmj/Documents/dmj_dev/ultronFront/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
           .default,
         { pagesPath: 'src/pages', hasRoutesInConfig: true },
       ),

@@ -19,9 +19,9 @@ export function _onCreate() {
   (runtimeDva.plugins || []).forEach(plugin => {
     app.use(plugin);
   });
-  app.use(require('/Users/dmj/Desktop/dmj_code/ultronFront/node_modules/dva-immer/dist/index.js')());
-  app.model({ namespace: 'model', ...(require('/Users/dmj/Desktop/dmj_code/ultronFront/src/pages/ultronHome/model.js').default) });
-app.model({ namespace: 'model', ...(require('/Users/dmj/Desktop/dmj_code/ultronFront/src/pages/ultronBar/model.js').default) });
+  app.use(require('/Users/dmj/Documents/dmj_dev/ultronFront/node_modules/dva-immer/dist/index.js')());
+  app.model({ namespace: 'model', ...(require('/Users/dmj/Documents/dmj_dev/ultronFront/src/pages/ultronHome/model.js').default) });
+app.model({ namespace: 'model', ...(require('/Users/dmj/Documents/dmj_dev/ultronFront/src/pages/ultronBar/model.js').default) });
   return app;
 }
 
