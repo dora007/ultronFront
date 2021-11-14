@@ -33,7 +33,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@4.0.0
         with: 
           branch: main
-          folder: web
+          folder: ./web/*
       # - name: Deploy to Server # 第四步，rsync推送文件
       #   uses: AEnterprise/rsync-deploy@v1.0 # 使用别人包装好的步骤镜像
       #   env:
