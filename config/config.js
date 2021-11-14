@@ -5,7 +5,7 @@ const prodGzipList = ['js', 'css'];
 export default {
   treeShaking: true,
   history: 'browser',
-  outputPath:'../web',
+  outputPath:'/web',
   theme: {
     '@primary-color': '#666666',
   },

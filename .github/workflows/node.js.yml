@@ -18,30 +18,20 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: "12.x"
-      - name: Cache node modules # 缓存 node_modules
-        uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.OS }}-build-${{ env.cache-name }}-
-            ${{ runner.OS }}-build-
-            ${{ runner.OS }}-
       - name: Install dependencies# 安装依赖
         run: yarn install
       - name: Build
         run: yarn build
-      - name: Deploy to Github Pages # 部署到 Github Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          deploy_key: ${{ secrets.BUDDY_DEPLOY_PRI }} # 这里就是刚刚 Secrets 中设置的私钥的名称，所以我说不要太为难自己嘛
-          publish_dir: ./web # 项目构建静态文件的目录        
+      # - name: Deploy to Github Pages # 部署到 Github Pages
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     deploy_key: ${{ secrets.BUDDY_DEPLOY_PRI }} # 这里就是刚刚 Secrets 中设置的私钥的名称，所以我说不要太为难自己嘛
+      #     publish_dir: ./web # 项目构建静态文件的目录        
 
       # - name: Deploy to Server # 第四步，rsync推送文件
       #   uses: AEnterprise/rsync-deploy@v1.0 # 使用别人包装好的步骤镜像
       #   env:
-      #     DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }} # 引用配置，SSH私钥
-      #     ARGS: -avz --delete --exclude='*.pyc' # rsync参数，排除.pyc文件
+      #     DEPLOY_KEY: ${{ secrets.BUDDY_DEPLOY_PRI }} # 引用配置，SSH私钥
       #     SERVER_PORT: "22" # SSH端口
       #     FOLDER: ./web/* # 要推送的文件夹，路径相对于代码仓库的根目录
       #     SERVER_IP: ${{ secrets.SSH_HOST }} # 引用配置，服务器的host名（IP或者域名domain.com）
