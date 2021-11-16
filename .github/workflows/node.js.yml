@@ -22,25 +22,10 @@ jobs:
         run: yarn install
       - name: Build
         run: yarn build
-      # - name: Deploy to Github Pages # 部署到 Github Pagessss
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     deploy_key: ${{ secrets.BUDDY_DEPLOY_PRI }} # 这里就是刚刚 Secrets 中设置的私钥的名称，所以我说不要太为难自己嘛
-      #     publish_dir: ./web # 项目构建静态文件的目录        
+      - name: Upload artifact # 上传构建产物，这里我们的源码目录是 src，而实际运行的代码是构建后的 bin 目录
+        uses: actions/upload-artifact@v2
+        with:
+          name: build_output
+          path: dist # 上传 bin 目录
 
-       # 这里引用了别人写好的发布库，具体参数信息可以查阅上面的链接
-      - name: Deploy to GitHub Page
-        uses: JamesIves/github-pages-deploy-action@4.0.0
-        with: 
-          branch: main
-          folder: ./web/*
-      # - name: Deploy to Server # 第四步，rsync推送文件
-      #   uses: AEnterprise/rsync-deploy@v1.0 # 使用别人包装好的步骤镜像
-      #   env:
-      #     DEPLOY_KEY: ${{ secrets.BUDDY_DEPLOY_PRI }} # 引用配置，SSH私钥
-      #     SERVER_PORT: "22" # SSH端口
-      #     FOLDER: ./web/* # 要推送的文件夹，路径相对于代码仓库的根目录
-      #     SERVER_IP: ${{ secrets.SSH_HOST }} # 引用配置，服务器的host名（IP或者域名domain.com）
-      #     USERNAME: ${{ secrets.SSH_USERNAME }} # 引用配置，服务器登录名
-      #     SERVER_DESTINATION: /web/ # 部署到目标文件夹
 
