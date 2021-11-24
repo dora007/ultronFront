@@ -1,24 +1,19 @@
 // ref: https://umijs.org/config/
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
 const prodGzipList = ['js', 'css'];
+const assetDir = "static";
 
 export default {
   treeShaking: true,
   history: 'browser',
   // outputPath:'/web',
+  exportStatic: {},
+  
   theme: {
     '@primary-color': '#666666',
   },
   define: {
-    //线上
-    // APPID: 'dingoauyl1gaxf2oedcrdp',
-    // BASE_URL: 'https://furcas.shouqianba.com/',
-    // CORPID: 'dingf239b82e87a474d7',
-    //测试
-    // APPID: 'dingoazhtcq92uilhobijk',
-    // BASE_URL: 'http://furcas.beta.iwosai.com/',
-    // CORPID: 'dinge97c0113c4fe039135c2f4657eb6378f',
-    //BASE_URL: 'http://localhost:8000/',
+
   },
   targets: {
     ie: 11,
@@ -45,12 +40,12 @@ export default {
   runtimePublicPath: true,
   chainWebpack: config => {
     //修改JS输出目录
-    config.output.filename('[name].[hash:8].js').chunkFilename('[name].[contenthash:8].chunk.js');
+    config.output.filename(assetDir+'/[name].[hash:8].js').chunkFilename(assetDir+'/[name].[contenthash:8].chunk.js');
     // 修改css输出目录
     config.plugin('extract-css').tap(() => [
       {
-        filename: `[name].[contenthash:8].css`,
-        chunkFilename: `[name].[contenthash:8].chunk.css`,
+        filename: assetDir+`/[name].[contenthash:8].css`,
+        chunkFilename: assetDir+`/[name].[contenthash:8].chunk.css`,
         ignoreOrder: true,
       },
     ]);

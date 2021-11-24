@@ -17,10 +17,11 @@
 		"dva": "^2.4.1",
 		"highcharts": "^9.2.2",
 		"highcharts-react-official": "^3.0.0",
+		"http-server": "^14.0.0",
 		"react": "^17.0.0",
 		"react-dom": "^17.0.0",
 		"react-virtualized": "^9.22.3",
-    "umi-request": "^1.2.19"
+		"umi-request": "^1.2.19"
 	},
 	"devDependencies": {
 		"babel-eslint": "^9.0.0",
